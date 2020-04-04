@@ -10,22 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class WelcomeController {
 
 	//@Value("${welcome.message}")
-	public String massage;
+	public String message;
 	
 	
-	public WelcomeController(@Value("${welcome.message}") String massage) {
+	public WelcomeController(@Value("${welcome.message}") String message) {
 		// TODO Auto-generated constructor stub
-		this.massage=massage;
-		System.out.println("massage-------"+massage);
+		this.message=message;
+		System.out.println("massage-------"+message);
 		//WELCOME_MESSAGE="hello";
 	}
-	public WelcomeController() {
-		
-	}
+	
 	
 
 	@GetMapping("/")
     public String sayHello() {
-        return "hello";
+        return message;
     }
 }
