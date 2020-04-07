@@ -53,6 +53,7 @@ public class InMemoryTimeEntryRepositoryTest {
 
     @Test
     public void list() throws Exception {
+    	
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
         repo.create(new TimeEntry(123L, 456L, LocalDate.parse("2017-01-08"), 8));
         repo.create(new TimeEntry(789L, 654L, LocalDate.parse("2017-01-07"), 4));
@@ -89,7 +90,8 @@ public class InMemoryTimeEntryRepositoryTest {
         assertThat(updatedEntry).isNull();
     }
 
-    @Test
+    @SuppressWarnings("unchecked")
+	@Test
     public void delete() throws Exception {
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
 
